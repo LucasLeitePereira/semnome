@@ -10,7 +10,7 @@ public class Movimentacao : MonoBehaviour
     void Update()
     {
         // Obter entrada do teclado (setas)
-        float horizontal = Input.GetKey(KeyCode.A) ? 1 : Input.GetKey(KeyCode.D) ? -1 : 0;
+        float horizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
         float vertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
 
         // Normalizar o vetor para evitar movimento mais rápido na diagonal
