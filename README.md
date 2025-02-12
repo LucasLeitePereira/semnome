@@ -48,7 +48,17 @@ f(s) = -75s/9 + 1500
 - Unity
 - C#
 
+## 👥 Equipe
+- @jhonxl - Desenvolvedor e Design
+- @andreelzs - Desenvolvedor e Design
+- @matheusg0mes - Desenvolvedor e Design
+- @LucasLeitePereira - Desenvolvedor e Design
+
+
 
 ---
 Criado por UnityLab 🎮
+
+
+
 
