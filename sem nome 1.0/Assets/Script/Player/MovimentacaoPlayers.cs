@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movimentacao : MonoBehaviour
+public class MovimentacaoPlayers : MonoBehaviour
 {
     public float moveSpeed = 5f; // Velocidade de movimento
     public float rotationSpeed = 10f; // Velocidade de rotação
 
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode up;
+    public KeyCode down;
+
     void Update()
     {
         // Obter entrada do teclado
-        float horizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
-        float vertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
+        float horizontal = Input.GetKey(right) ? 1 : Input.GetKey(left) ? -1 : 0;
+        float vertical = Input.GetKey(up) ? 1 : Input.GetKey(down) ? -1 : 0;
 
         // Normalizar o vetor para evitar movimento mais rápido na diagonal
         Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
@@ -30,7 +35,3 @@ public class Movimentacao : MonoBehaviour
         }
     }
 }
-
-
-
-
