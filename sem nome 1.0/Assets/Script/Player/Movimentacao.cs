@@ -9,11 +9,11 @@ public class Movimentacao : MonoBehaviour
 
     void Update()
     {
-        // Obter entrada do teclado (setas)
+        // Obter entrada do teclado
         float horizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
         float vertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
 
-        // Normalizar o vetor para evitar movimento mais rápido na diagonal
+        // Normalizar o vetor para evitar movimento mais rápido na diago
         Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
 
         // Movimentar o personagem
