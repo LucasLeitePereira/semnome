@@ -4,12 +4,30 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerScript : MonoBehaviour
+public class GameController : MonoBehaviour
 {
+    public static GameController gc;
+
     public TextMeshProUGUI timeText;
     public float timeCount;
     public bool timeOver;
 
+    public TextMeshProUGUI itensText;
+    public int itens;
+
+    public TextMeshProUGUI vidaText;
+    public int lives = 3;
+
+    private void Awake()
+    {
+        if(gc == null)
+        {
+            gc = this;
+        }
+        else if (gc != this) {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -17,6 +35,7 @@ public class TimerScript : MonoBehaviour
     }
     public void RefreshScreen()
     {
+        vidaText.text = lives.ToString();
         timeText.text = timeCount.ToString("F0");
     }
 

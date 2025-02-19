@@ -28,21 +28,12 @@ public class EnemyMove3D : MonoBehaviour
 
         if (isWall)
         {
-            Debug.Log("Colidiu com: " + hit.collider.name); // Mostra o nome do objeto colidido
 
             if (hit.collider.CompareTag("Wall"))
             {
-                Debug.Log("Girando 90 graus!"); // Confirmação de que a tag foi detectada
                 transform.Rotate(0, rotation, 0);
             }
-            else
-            {
-                Debug.LogWarning("Objeto colidido não tem tag 'Wall'."); // Aviso de tag ausente
-            }
         }
-        else
-        {
-            Debug.Log("Nenhuma colisão detectada."); // Aviso se o raycast não atingiu nada
-        }
+
     }
 }
