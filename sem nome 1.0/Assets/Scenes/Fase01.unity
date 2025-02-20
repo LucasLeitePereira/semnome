@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -431,7 +431,7 @@ MonoBehaviour:
   itensText: {fileID: 0}
   itens: 0
   vidaText: {fileID: 0}
-  lives: 3
+  vidas: 3
 --- !u!4 &18045899
 Transform:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 155553376}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1761,7 +1761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409962358}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 429053072}
   - component: {fileID: 429053071}
   - component: {fileID: 429053070}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bolsonarita (3)
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -2980,7 +2980,7 @@ GameObject:
   - component: {fileID: 702572540}
   - component: {fileID: 702572539}
   - component: {fileID: 702572538}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bolsonarita
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -3203,7 +3203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 764248985}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -5625,7 +5625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197884682}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Inimigos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6247,7 +6247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316790210}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -6588,7 +6588,7 @@ MonoBehaviour:
   itensText: {fileID: 1543311910}
   itens: 0
   vidaText: {fileID: 174262054}
-  lives: 3
+  vidas: 3
 --- !u!1001 &1464675805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6866,7 +6866,7 @@ GameObject:
   - component: {fileID: 1494388720}
   - component: {fileID: 1494388719}
   - component: {fileID: 1494388718}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bolsonarita (2)
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -8367,7 +8367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1732608340}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -8445,8 +8445,7 @@ GameObject:
   - component: {fileID: 1771526262}
   - component: {fileID: 1771526260}
   - component: {fileID: 1771526267}
-  - component: {fileID: 1771526268}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8580,7 +8579,7 @@ Transform:
   m_GameObject: {fileID: 1771526259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.050000012, y: 1, z: -2.23}
+  m_LocalPosition: {x: 0, y: 1, z: -0.94000006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8598,25 +8597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
-  gcPlayer: {fileID: 1444154802}
---- !u!114 &1771526268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771526259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b52299b984467488e7650b8b5e7d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alive: 1
-  gcPlayer: {fileID: 1444154802}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  gcPlayer: {fileID: 0}
+  itens: 0
 --- !u!4 &1782951988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4586105336581863487, guid: 20a5b9a10da87464fa016ef6ec754d99, type: 3}
@@ -8636,7 +8618,7 @@ GameObject:
   - component: {fileID: 1784097451}
   - component: {fileID: 1784097454}
   - component: {fileID: 1784097455}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Petista
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -8937,7 +8919,7 @@ GameObject:
   - component: {fileID: 1832857990}
   - component: {fileID: 1832857989}
   - component: {fileID: 1832857988}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bolsonarita (1)
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -9160,7 +9142,7 @@ GameObject:
   - component: {fileID: 1880606885}
   - component: {fileID: 1880606884}
   - component: {fileID: 1880606883}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Petista (1)
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -10794,7 +10776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2109053712}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -10900,7 +10882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126560798}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11202,8 +11184,7 @@ GameObject:
   - component: {fileID: 2140223651}
   - component: {fileID: 2140223658}
   - component: {fileID: 2140223659}
-  - component: {fileID: 2140223660}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11319,7 +11300,7 @@ Transform:
   m_GameObject: {fileID: 2140223650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 1, z: -0.75}
+  m_LocalPosition: {x: 0, y: 1, z: -2.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11355,25 +11336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
   gcPlayer: {fileID: 1444154802}
---- !u!114 &2140223660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140223650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b52299b984467488e7650b8b5e7d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alive: 1
-  gcPlayer: {fileID: 1444154802}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  itens: 0
 --- !u!1001 &2140477457
 PrefabInstance:
   m_ObjectHideFlags: 0

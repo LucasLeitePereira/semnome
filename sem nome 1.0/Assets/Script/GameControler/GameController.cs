@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     public int itens;
 
     public TextMeshProUGUI vidaText;
-    public int lives = 3;
+    public int vidas = 3;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     }
     public void RefreshScreen()
     {
-        vidaText.text = lives.ToString();
+        vidaText.text = vidas.ToString();
         timeText.text = timeCount.ToString("F0");
     }
 

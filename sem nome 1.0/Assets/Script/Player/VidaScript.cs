@@ -1,21 +1,19 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
 
 public class VidaScript : MonoBehaviour
 {
     public bool alive = true;
     public GameController gcPlayer;
-    private bool isIntangible = false;
 
-    [SerializeField] private LayerMask enemyLayer;
-    private Collider playerCollider;
+    private Vector3 positionInitial;
 
-    void Start()
+    private void Start()
     {
-        playerCollider = GetComponent<Collider>();
+        positionInitial = transform.position;
     }
-
     private void Update()
     {
         isDead();
@@ -23,21 +21,23 @@ public class VidaScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log($"Colisão com: {other.gameObject.name} (Layer: {other.gameObject.layer})");
-
-        if (other.gameObject.tag == "Inimigos" && !isIntangible)
+        if (other.gameObject.tag == "Inimigos")
         {
-            if (gcPlayer.lives > 0)
+            if (gcPlayer.vidas >= 0)
             {
-                gcPlayer.lives--;
-                gcPlayer.vidaText.text = gcPlayer.lives.ToString();
-                StartCoroutine(ActivateIntangibility());
+                gcPlayer.vidas--;
+                Debug.Log("-1 Vida!");
+                gcPlayer.vidaText.text = gcPlayer.vidas.ToString();
+                transform.position = positionInitial;
+
+                if (gcPlayer.vidas == 0)
+                {
+                    alive = false;
+                } 
+
+                 
             }
-            else if (gcPlayer.lives == 0)
-            {
-                if (gcPlayer != null) gcPlayer.lives = 0;
-                alive = false;
-            }
+             
         }
     }
 
@@ -46,37 +46,7 @@ public class VidaScript : MonoBehaviour
         if (!alive)
         {
             Time.timeScale = 0;
-            Debug.Log("Você morreu!");
+            Debug.Log("Voce morreu!");
         }
-    }
-
-    private IEnumerator ActivateIntangibility()
-    {
-        isIntangible = true;
-
-        // Verifica se as layers existem
-        int playerLayer = LayerMask.NameToLayer("Player");
-        int enemyLayer = LayerMask.NameToLayer("Enemy");
-
-        if (playerLayer == -1 || enemyLayer == -1)
-        {
-            Debug.LogError("Layers não configuradas corretamente!");
-            yield break;
-        }
-
-        // Ignora colisões entre Player e Enemy
-        Physics.IgnoreLayerCollision(playerLayer, enemyLayer, true);
-
-        yield return new WaitForSecondsRealtime(2f);
-
-        // Restaura colisões
-        Physics.IgnoreLayerCollision(playerLayer, enemyLayer, false);
-        isIntangible = false;
-    }
-
-    // Método auxiliar para verificar layers
-    private bool IsInLayerMask(int layer, LayerMask layerMask)
-    {
-        return (layerMask.value & (1 << layer)) != 0;
     }
 }

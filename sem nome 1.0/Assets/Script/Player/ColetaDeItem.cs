@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ColetaDeItem : MonoBehaviour
 {
-    public int coins;
     public GameController gcPlayer;
+
+    public int itens;
 
     private void Start()
     {

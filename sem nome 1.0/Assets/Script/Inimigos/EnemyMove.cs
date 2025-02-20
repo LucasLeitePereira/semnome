@@ -8,7 +8,8 @@ public class EnemyMove3D : MonoBehaviour
     public float rayDistance = 6f;
     public Transform rayOrigin; // Ponto de origem do raycast (arraste um EmptyObject para cá)
     public float rotation;
-
+    
+    
     void Update()
     {
         // Move o inimigo
