@@ -28,7 +28,6 @@ public class EnemyMove3D : MonoBehaviour
 
         if (isWall)
         {
-
             if (hit.collider.CompareTag("Wall"))
             {
                 transform.Rotate(0, rotation, 0);
