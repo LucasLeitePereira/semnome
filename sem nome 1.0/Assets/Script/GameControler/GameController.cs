@@ -14,25 +14,55 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI itensText;
     public int itens;
+    public string tagParaContar = "Item";
 
     public TextMeshProUGUI vidaText;
     public int vidas = 3;
 
+    private int qntTotalItens; // Variável para armazenar a quantidade total de itens
+
     private void Awake()
     {
-        if(gc == null)
+        if (gc == null)
         {
             gc = this;
         }
-        else if (gc != this) {
+        else if (gc != this)
+        {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        // Atribui a quantidade total de itens com a tag especificada
+        qntTotalItens = defQntItens();
+    }
+
+    private int defQntItens()
+    {
+        GameObject[] objetosComTag = GameObject.FindGameObjectsWithTag(tagParaContar);
+
+        // Conta a quantidade de objetos encontrados
+        int qntdItens = objetosComTag.Length;
+
+        // Exibe a quantidade no console
+        Debug.Log("Quantidade de objetos com a tag '" + tagParaContar + "': " + qntdItens);
+
+        return qntdItens;
     }
 
     private void Update()
     {
         TimeCount();
+
+        if (itens == qntTotalItens)
+        {
+            Debug.Log("Você ganhou!");
+            Time.timeScale = 0;
+        }
     }
+
     public void RefreshScreen()
     {
         vidaText.text = vidas.ToString();
@@ -52,10 +82,9 @@ public class GameController : MonoBehaviour
             {
                 timeCount = 0;
                 timeOver = true;
+                Debug.Log("Voce perdeu!");
                 Time.timeScale = 0;
             }
         }
     }
 }
-
-

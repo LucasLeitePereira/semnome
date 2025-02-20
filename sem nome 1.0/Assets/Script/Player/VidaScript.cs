@@ -28,16 +28,14 @@ public class VidaScript : MonoBehaviour
                 gcPlayer.vidas--;
                 Debug.Log("-1 Vida!");
                 gcPlayer.vidaText.text = gcPlayer.vidas.ToString();
-                transform.position = positionInitial;
+                transform.position = positionInitial; // Volta o player para o ponto Inicial
 
-                if (gcPlayer.vidas == 0)
+                if (gcPlayer.vidas <= 0)
                 {
+                    gcPlayer.vidas = 0;
                     alive = false;
                 } 
-
-                 
             }
-             
         }
     }
 
@@ -45,8 +43,10 @@ public class VidaScript : MonoBehaviour
     {
         if (!alive)
         {
+            Debug.Log("Sem vidas restantes");
+            Debug.Log("Voce perdeu!");
             Time.timeScale = 0;
-            Debug.Log("Voce morreu!");
+            
         }
     }
 }

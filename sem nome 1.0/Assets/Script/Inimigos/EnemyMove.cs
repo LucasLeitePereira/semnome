@@ -36,4 +36,21 @@ public class EnemyMove3D : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter(Collision collision) // Script que serve para o inimigo não girar ao colidir com o player
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            // Impede que o inimigo gire ao colidir com o jogador
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.angularVelocity = Vector3.zero; // Zera a velocidade angular
+                rb.velocity = Vector3.zero; // Zera a velocidade linear (opcional)
+            }
+
+            // Aqui você pode adicionar a lógica para o jogador perder vida e voltar ao ponto de partida
+            Debug.Log("Colidiu com o jogador!");
+        }
+    }
 }
