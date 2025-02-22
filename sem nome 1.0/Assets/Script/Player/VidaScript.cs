@@ -5,18 +5,23 @@ using UnityEngine;
 
 public class VidaScript : MonoBehaviour
 {
+    public static VidaScript vs;
+
     public bool alive = true;
     public GameController gcPlayer;
 
     private Vector3 positionInitial;
 
+    private void Awake()
+    {
+        if (vs == null)
+        {
+            vs = this;
+        }
+    }
     private void Start()
     {
         positionInitial = transform.position;
-    }
-    private void Update()
-    {
-        isDead();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -39,14 +44,4 @@ public class VidaScript : MonoBehaviour
         }
     }
 
-    private void isDead()
-    {
-        if (!alive)
-        {
-            Debug.Log("Sem vidas restantes");
-            Debug.Log("Voce perdeu!");
-            Time.timeScale = 0;
-            
-        }
-    }
 }
