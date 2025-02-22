@@ -39,6 +39,7 @@ public class VidaScript : MonoBehaviour
                 {
                     gcPlayer.vidas = 0;
                     alive = false;
+                    Debug.Log("Morreu!");
                 } 
             }
         }
