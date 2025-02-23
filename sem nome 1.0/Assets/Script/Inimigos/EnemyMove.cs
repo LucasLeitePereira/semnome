@@ -8,7 +8,8 @@ public class EnemyMove3D : MonoBehaviour
     public float rayDistance = 6f;
     public Transform rayOrigin; // Ponto de origem do raycast (arraste um EmptyObject para cá)
     public float rotation;
-
+    
+    
     void Update()
     {
         // Move o inimigo
@@ -28,21 +29,28 @@ public class EnemyMove3D : MonoBehaviour
 
         if (isWall)
         {
-            Debug.Log("Colidiu com: " + hit.collider.name); // Mostra o nome do objeto colidido
-
             if (hit.collider.CompareTag("Wall"))
             {
-                Debug.Log("Girando 90 graus!"); // Confirmação de que a tag foi detectada
                 transform.Rotate(0, rotation, 0);
             }
-            else
-            {
-                Debug.LogWarning("Objeto colidido não tem tag 'Wall'."); // Aviso de tag ausente
-            }
         }
-        else
+
+    }
+
+    private void OnCollisionEnter(Collision collision) // Script que serve para o inimigo não girar ao colidir com o player
+    {
+        if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Nenhuma colisão detectada."); // Aviso se o raycast não atingiu nada
+            // Impede que o inimigo gire ao colidir com o jogador
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.angularVelocity = Vector3.zero; // Zera a velocidade angular
+                rb.velocity = Vector3.zero; // Zera a velocidade linear (opcional)
+            }
+
+            // Aqui você pode adicionar a lógica para o jogador perder vida e voltar ao ponto de partida
+            Debug.Log("Colidiu com o jogador!");
         }
     }
 }

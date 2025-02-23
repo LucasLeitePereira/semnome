@@ -1,30 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class ColetaDeItem : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public static ColetaDeItem ci;
+
+    public GameController gcPlayer;
+
+    public string tagParaContar = "Item";
+    public int qntTotalItens; // Variável para armazenar a quantidade total de itens
+
+    private void Awake()
     {
-        // Verifica se o objeto com o qual colidimos é o item
-        if (other.CompareTag("Item"))
+        if (ci == null)
         {
-            // Aqui você pode adicionar o código para aumentar algum valor (ex: pontuação)
-            CollectItem(other.gameObject);
+            ci = this;
         }
     }
-
-    // Método para coletar o item
-    private void CollectItem(GameObject item)
+    private void Start()
     {
-        // Exibe uma mensagem no console (opcional)
-        Debug.Log("Item coletado!");
+        
+        qntTotalItens = defQntItens(); // Atribui a quantidade total de itens com a tag especificada
 
-        // Aqui você pode adicionar ao inventário ou algo do tipo
-        // Exemplo simples: destruir o item
-        Destroy(item);
+        gcPlayer = GameController.gc;
+        gcPlayer.itens = 0;
+    }
+    private int defQntItens()
+    {
+        GameObject[] objetosComTag = GameObject.FindGameObjectsWithTag(tagParaContar);
+
+        // Conta a quantidade de objetos encontrados
+        int qntdItens = objetosComTag.Length;
+
+        // Exibe a quantidade no console
+        Debug.Log("Quantidade de objetos com a tag '" + tagParaContar + "': " + qntdItens);
+
+        return qntdItens;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item")
+        {
+            Destroy(other.gameObject);
+            gcPlayer.itens++;
+            gcPlayer.itensText.text = gcPlayer.itens.ToString();
+        }
     }
 }
-
-
-

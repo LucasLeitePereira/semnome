@@ -17,6 +17,10 @@ public class MovimentacaoPlayers : MonoBehaviour
         // Obter entrada do teclado
         float horizontal = Input.GetKey(right) ? 1 : Input.GetKey(left) ? -1 : 0;
         float vertical = Input.GetKey(up) ? 1 : Input.GetKey(down) ? -1 : 0;
+        
+        float eixoX = transform.position.x;
+        float eixoZ = transform.position.z;
+        transform.position = new Vector3(eixoX, 1, eixoZ);
 
         // Normalizar o vetor para evitar movimento mais rápido na diagonal
         Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
