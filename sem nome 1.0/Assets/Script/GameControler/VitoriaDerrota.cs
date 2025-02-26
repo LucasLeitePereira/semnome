@@ -8,6 +8,7 @@ public class VitoriaDerrota : MonoBehaviour
     public GameController game;  // Script de tempo
     public VidaScript vida;     // Script de vida
     public ColetaDeItem item;  // Script de coleta de item
+    public ContadorDePontos pts;
 
     public string cenaMenu;
 
@@ -19,6 +20,7 @@ public class VitoriaDerrota : MonoBehaviour
         game = GameController.gc;
         vida = VidaScript.vs;
         item = ColetaDeItem.ci;
+        pts = ContadorDePontos.cp;
 
         telaDerrota.SetActive(false); // Desliga a tela de Derrota
         telaVitoria.SetActive(false); // Desliga a tela de Vitoria
@@ -67,15 +69,15 @@ public class VitoriaDerrota : MonoBehaviour
     {
         if (game.itens == item.qntTotalItens) // Jogador ganha ao coletar todos os itens da fase
         {
-            Debug.Log("Ganhou!");
-            Time.timeScale = 0;
+            pts.calcularPts();
             telaVitoria.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
     private void itLost()
     {
-        Debug.Log("Voce perdeu!");
+        pts.calcularPts();
         Time.timeScale = 0;
         telaDerrota.SetActive(true); // Liga a tela de derrota
     }
