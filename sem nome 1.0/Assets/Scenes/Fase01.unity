@@ -560,6 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 56153816}
   - component: {fileID: 56153817}
+  - component: {fileID: 56153818}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -599,9 +600,23 @@ MonoBehaviour:
   game: {fileID: 0}
   vida: {fileID: 0}
   item: {fileID: 0}
+  pts: {fileID: 0}
   cenaMenu: Tela de Menu
   telaDerrota: {fileID: 1339496532}
   telaVitoria: {fileID: 1149981767}
+--- !u!114 &56153818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56153815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c580ee0f51412744b93dc11de0bebbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 0}
 --- !u!4 &70449609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2551574300600872957, guid: 0ce8600790231bb4c9644153907e7d57, type: 3}
@@ -2154,7 +2169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 2109053712}
   rotation: 180
 --- !u!54 &429053071
@@ -8181,7 +8196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 432097646}
-  timeCount: 900
+  timeCount: 90
   timeOver: 0
   itensText: {fileID: 1543311910}
   itens: 0
@@ -8500,7 +8515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 155553376}
   rotation: 180
 --- !u!54 &1494388719
@@ -10623,7 +10638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 1732608340}
   rotation: -90
 --- !u!1001 &1791999580
@@ -10903,7 +10918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 764248985}
   rotation: 180
 --- !u!54 &1832857989
@@ -11126,7 +11141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 1316790210}
   rotation: 180
 --- !u!54 &1880606884
