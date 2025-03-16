@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -560,7 +560,6 @@ GameObject:
   m_Component:
   - component: {fileID: 56153816}
   - component: {fileID: 56153817}
-  - component: {fileID: 56153818}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -600,23 +599,9 @@ MonoBehaviour:
   game: {fileID: 0}
   vida: {fileID: 0}
   item: {fileID: 0}
-  pts: {fileID: 0}
   cenaMenu: Tela de Menu
   telaDerrota: {fileID: 1339496532}
   telaVitoria: {fileID: 1149981767}
---- !u!114 &56153818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56153815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c580ee0f51412744b93dc11de0bebbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game: {fileID: 0}
 --- !u!4 &70449609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2551574300600872957, guid: 0ce8600790231bb4c9644153907e7d57, type: 3}
@@ -10466,7 +10451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
   tagParaContar: Item
   qntTotalItens: 0
 --- !u!114 &1771526268
@@ -10482,7 +10467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
 --- !u!4 &1782951988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4586105336581863487, guid: 20a5b9a10da87464fa016ef6ec754d99, type: 3}
@@ -13555,7 +13540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
   tagParaContar: Item
   qntTotalItens: 0
 --- !u!114 &2140223660
@@ -13571,7 +13556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
 --- !u!1001 &2140477457
 PrefabInstance:
   m_ObjectHideFlags: 0

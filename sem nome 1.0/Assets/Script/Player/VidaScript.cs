@@ -7,7 +7,7 @@ public class VidaScript : MonoBehaviour
 {
     public static VidaScript vs;
 
-    public bool alive = true;
+    
     public GameController gcPlayer;
 
     private Vector3 positionInitial;
@@ -18,6 +18,8 @@ public class VidaScript : MonoBehaviour
         {
             vs = this;
         }
+
+        gcPlayer = GameController.gc;
     }
     private void Start()
     {
@@ -32,13 +34,15 @@ public class VidaScript : MonoBehaviour
             {
                 gcPlayer.vidas--;
                 Debug.Log("-1 Vida!");
-                gcPlayer.vidaText.text = gcPlayer.vidas.ToString();
+                Debug.Log("Vidas restantes: " + gcPlayer.vidas);
+
+                gcPlayer.vidaText.text = gcPlayer.vidas.ToString(); // Altera a quantidade de vidas na tela
                 transform.position = positionInitial; // Volta o player para o ponto Inicial
 
                 if (gcPlayer.vidas <= 0)
                 {
                     gcPlayer.vidas = 0;
-                    alive = false;
+                    gcPlayer.alive = false;
                     Debug.Log("Morreu!");
                 } 
             }

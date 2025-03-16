@@ -8,7 +8,6 @@ public class VitoriaDerrota : MonoBehaviour
     public GameController game;  // Script de tempo
     public VidaScript vida;     // Script de vida
     public ColetaDeItem item;  // Script de coleta de item
-    public ContadorDePontos pts;
 
     public string cenaMenu;
 
@@ -20,67 +19,42 @@ public class VitoriaDerrota : MonoBehaviour
         game = GameController.gc;
         vida = VidaScript.vs;
         item = ColetaDeItem.ci;
-        pts = ContadorDePontos.cp;
 
         telaDerrota.SetActive(false); // Desliga a tela de Derrota
         telaVitoria.SetActive(false); // Desliga a tela de Vitoria
 
         Time.timeScale = 1; // Ao reiniciar, ele "liga" o tempo de novo
-        vida.alive = true;  // Ao reiniciar, ele reseta a quantidade de vidas
+        game.alive = true;  // Ao reiniciar, ele reseta a quantidade de vidas
         
     }
 
     private void Update()
     {
         itWon(); // Ganhou a fase
-        TimeCount(); // Perde se o tempo acabar
-        isDead(); // Perde se perder todas as vidas
-    }
-
-    private void TimeCount() // Contador de tempo
-    {
-        game.timeOver = false;
-
-        if (!game.timeOver && game.timeCount > 0)
-        {
-            game.timeCount -= Time.deltaTime;
-            game.RefreshScreen();
-
-            if (game.timeCount <= 0) // Jogador perde quanto o tempo termina
-            {
-                game.timeCount = 0;
-                game.timeOver = true;
-                itLost();
-            }
-        }
-    }
-
-    private void isDead() // Verifica se o jogar ainda está vivo
-    {
-        if (!vida.alive)
-        {
-            Debug.Log("Sem vidas restantes");
-            itLost();
-
-        }
+        itLost(); // Perdeu a fase
     }
 
     private void itWon()
     {
         if (game.itens == item.qntTotalItens) // Jogador ganha ao coletar todos os itens da fase
         {
-            pts.calcularPts();
-            telaVitoria.SetActive(true);
             Time.timeScale = 0;
+            telaVitoria.SetActive(true);
+            game.CalculoPts();
         }
     }
 
     private void itLost()
     {
-        pts.calcularPts();
-        Time.timeScale = 0;
-        telaDerrota.SetActive(true); // Liga a tela de derrota
+        if (!game.alive || game.timeOver)
+        {
+            Time.timeScale = 0;
+            telaDerrota.SetActive(true); // Liga a tela de derrota
+            game.CalculoPts();
+        }
+        
     }
+
     public void voltarMenu() // Botão de Sair
     {
         Debug.Log("Mudando para tela de Menu");

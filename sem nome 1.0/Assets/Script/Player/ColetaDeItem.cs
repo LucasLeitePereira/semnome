@@ -20,9 +20,7 @@ public class ColetaDeItem : MonoBehaviour
     }
     private void Start()
     {
-        
         qntTotalItens = defQntItens(); // Atribui a quantidade total de itens com a tag especificada
-
         gcPlayer = GameController.gc;
         gcPlayer.itens = 0;
     }
@@ -44,7 +42,7 @@ public class ColetaDeItem : MonoBehaviour
         {
             Destroy(other.gameObject);
             gcPlayer.itens++;
-            gcPlayer.itensText.text = gcPlayer.itens.ToString();
+            gcPlayer.itensText.text = gcPlayer.itens.ToString(); // Altera o texto da quantidade de itens na tela
         }
     }
 }
