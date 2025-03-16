@@ -2154,7 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 2109053712}
   rotation: 180
 --- !u!54 &429053071
@@ -8181,7 +8181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 432097646}
-  timeCount: 500
+  timeCount: 90
   timeOver: 0
   itensText: {fileID: 1543311910}
   itens: 0
@@ -8500,7 +8500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 155553376}
   rotation: 180
 --- !u!54 &1494388719
@@ -10451,7 +10451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
   tagParaContar: Item
   qntTotalItens: 0
 --- !u!114 &1771526268
@@ -10467,7 +10467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
 --- !u!4 &1782951988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4586105336581863487, guid: 20a5b9a10da87464fa016ef6ec754d99, type: 3}
@@ -10623,7 +10623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 1732608340}
   rotation: -90
 --- !u!1001 &1791999580
@@ -10903,7 +10903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 764248985}
   rotation: 180
 --- !u!54 &1832857989
@@ -11126,7 +11126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rayDistance: 0.1
+  rayDistance: 0.3
   rayOrigin: {fileID: 1316790210}
   rotation: 180
 --- !u!54 &1880606884
@@ -13540,7 +13540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb34e9d9b4eb72e42a254f938c94502e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
   tagParaContar: Item
   qntTotalItens: 0
 --- !u!114 &2140223660
@@ -13556,7 +13556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  gcPlayer: {fileID: 1444154802}
+  gcPlayer: {fileID: 0}
 --- !u!1001 &2140477457
 PrefabInstance:
   m_ObjectHideFlags: 0
